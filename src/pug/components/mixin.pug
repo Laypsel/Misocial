@@ -1,0 +1,70 @@
+- 
+    let topics = [
+        {name:"Home", url:"#"},
+        {name:"Why MISOCIAL", url:"#"},
+        {name:"Features", url:"#"},
+        {name:"Articles", url:"#"}, 
+        {name:"Pricing", url:"#"}, 
+    ]
+
+mixin menu (items)
+    ul 
+        for item in items 
+            li 
+                a(href=item.url) #{item.name}
+
+- 
+    let plans = {
+        free:{
+            icon:"img/spaceship.svg",
+            title:"personal",
+            price:"0",
+            text:[
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris."
+            ],
+            buttonurl:"#"
+        },
+        middle:{
+            icon:"img/transport.svg",
+            title:"personal",
+            price:"29",
+            text:[
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris."
+            ],
+            buttonurl:"#"
+        },
+        expensive:{
+            icon:"img/capsule.svg",
+            title:"personal",
+            price:"49",
+            text:[
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris."
+            ],
+            buttonurl:"#"
+        }
+    }
+
+mixin tarif (items)
+    figure.choose 
+        figcaption 
+            img(src=items.icon)
+            .upper 
+                h3=items.title 
+            .price 
+                p
+                    b=items.price
+            .plantext
+                for item in items.text
+                    p=item
+            .button
+                a(href=items.buttonurl) select plan
+            

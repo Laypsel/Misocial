@@ -1,0 +1,5 @@
+= gradient ($img)
+    background: linear-gradient(to left, rgba(#87d3cd,0.8) 0%, rgba(109,69,225,0.9) 100%), url($img) no-repeat center / cover
+= media ($size)
+    @media screen and (min-width: #{$size}px)
+        @content
